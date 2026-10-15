@@ -1,0 +1,10 @@
+---
+import '../styles/global.css';
+const {title='Careerconnect NG | Find Jobs in Nigeria',description='Discover job opportunities across Nigeria and apply through official employer links.'}=Astro.props;
+const canonical=new URL(Astro.url.pathname,Astro.site).toString();
+---
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b1534"><meta name="description" content={description}><link rel="canonical" href={canonical}><meta property="og:title" content={title}><meta property="og:description" content={description}><meta property="og:url" content={canonical}><title>{title}</title></head><body>
+<header><div class="wrap nav"><a class="brand" href="/"><span class="logo">C<span>+</span></span>Careerconnect <b>NG</b></a><button id="menu-toggle" aria-expanded="false">Menu</button><nav id="nav"><a href="/#jobs">Find Jobs</a><a href="/#categories">Categories</a><a href="/about">About</a><a class="navbtn" href="/#jobs">Explore vacancies ↗</a></nav></div></header>
+<main><slot/></main><footer><div class="wrap foot"><div><a class="brand light" href="/">Careerconnect <b>NG</b></a><p>Helping job seekers discover opportunities across Nigeria.</p></div><div><a href="/#jobs">Browse jobs</a> · <a href="/about">About</a> · <a href="/admin">Admin</a></div><small>© {new Date().getFullYear()} Careerconnect NG. Verify vacancies before applying.</small></div></footer>
+<script>const b=document.querySelector('#menu-toggle'),n=document.querySelector('#nav');b?.addEventListener('click',()=>{let o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!o));n?.classList.toggle('open',!o)});</script>
+</body></html>

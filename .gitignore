@@ -1,0 +1,3 @@
+node_modules/\ndist/\n.astro/\n.env\n
+# Local Netlify folder
+.netlify

@@ -1,0 +1,1 @@
+export function GET({site}){const base=(site||new URL('https://careerconnectng.netlify.app')).toString().replace(/\/$/,'');return new Response(`User-agent: *\nAllow: /\nDisallow: /admin\nSitemap: ${base}/sitemap.xml\n`,{headers:{'Content-Type':'text/plain; charset=utf-8'}})}
